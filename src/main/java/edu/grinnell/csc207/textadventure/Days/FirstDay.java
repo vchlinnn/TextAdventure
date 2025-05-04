@@ -1,4 +1,4 @@
-package edu.grinnell.csc207.textadventure;
+package edu.grinnell.csc207.textadventure.Days;
 
 import java.util.Scanner;
 import edu.grinnell.csc207.textadventure.RoomObjects.MailBox;

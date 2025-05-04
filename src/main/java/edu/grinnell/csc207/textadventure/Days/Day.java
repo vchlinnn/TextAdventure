@@ -1,4 +1,4 @@
-package edu.grinnell.csc207.textadventure;
+package edu.grinnell.csc207.textadventure.Days;
 
 public interface Day {
 

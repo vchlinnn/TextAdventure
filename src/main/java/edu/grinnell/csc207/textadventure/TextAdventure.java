@@ -1,8 +1,9 @@
 package edu.grinnell.csc207.textadventure;
 
 import java.util.Scanner;
-import edu.grinnell.csc207.textadventure.Day;
-import edu.grinnell.csc207.textadventure.FirstDay;
+
+import edu.grinnell.csc207.textadventure.Days.Day;
+import edu.grinnell.csc207.textadventure.Days.FirstDay;
 
 public class TextAdventure {
     Scanner scanner;
