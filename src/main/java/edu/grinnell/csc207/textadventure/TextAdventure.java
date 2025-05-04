@@ -44,21 +44,21 @@ public class TextAdventure {
     }
     public static void main(String[] args) {
         boolean playing = true;
+        TextAdventure game = new TextAdventure();
+        System.out.print(
+            "Welcome to Linh Vu's TextAdventure game.\n" + "\n" + 
+            "You slowly open your eyes.\n" +
+            "You're in a small, old room. " + 
+            "The walls are cracked. " + 
+            "The air smells like dust and wood. " + 
+            "It feels like a house in a quiet village.\n" +
+            "You don't remember how you got here.\n" +
+            "But somehow… you know this is a dream. \n" + 
+            "You can wake up anytime — just pinch yourself. \n" + 
+            "Still, something tells you to wait. \n" + 
+            "Not yet.\n" 
+        );
         while (playing) {
-            TextAdventure game = new TextAdventure();
-            System.out.print(
-                "Welcome to Linh Vu's TextAdventure game.\n" + "\n" + 
-                "You slowly open your eyes.\n" +
-                "You’re in a small, old room. " + 
-                "The walls are cracked. " + 
-                "The air smells like dust and wood. " + 
-                "It feels like a house in a quiet village.\n" +
-                "You don’t remember how you got here.\n" +
-                "But somehow… you know this is a dream. \n" + 
-                "You can wake up anytime — just pinch yourself. \n" + 
-                "Still, something tells you to wait. \n" + 
-                "Not yet.\n" 
-            );
             String[] command = game.scanner.nextLine().toLowerCase().split(" ");
             if (command[0] == "pinch") {
                 playing = game.currentDay.wakeUp();
@@ -66,5 +66,6 @@ public class TextAdventure {
                 game.handleInput(command);
             }
         }
+        System.out.println("Till next time!\n");
     }
 }

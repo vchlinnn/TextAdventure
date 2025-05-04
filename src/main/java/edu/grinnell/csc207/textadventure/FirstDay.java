@@ -1,15 +1,22 @@
 package edu.grinnell.csc207.textadventure;
 
 import java.util.Scanner;
+import edu.grinnell.csc207.textadventure.RoomObjects.MailBox;
 
 public class FirstDay implements Day {
     Scanner scanner;
     boolean overcomeDizziness;
-    boolean mailboxUnlocked;
+    MailBox mailbox;
+    boolean seeKey;
+    boolean haveKey;
+    boolean endDay;
 
     public FirstDay() {
         this.scanner = new Scanner(System.in);
         this.overcomeDizziness = false;
+        this.mailbox = new MailBox();
+        this.seeKey = false;
+        this.endDay = false;
     }
     
     public void playerWait() {
@@ -28,7 +35,7 @@ public class FirstDay implements Day {
 
     public void go() {
         if (overcomeDizziness) {
-
+            System.out.println("The room is too small - you don't need to move\n");
         } else {
             System.out.println("Your head spins with dizziness." +
             "You probably can't do that yet.");
@@ -37,7 +44,7 @@ public class FirstDay implements Day {
 
     public void talk(String person) {
         if (overcomeDizziness) {
-
+            System.out.println("...No response\n");
         } else {
             System.out.println("Your head spins with dizziness." +
             "You probably can't do that yet.");
@@ -46,7 +53,17 @@ public class FirstDay implements Day {
 
     public void pick(String object) {
         if (overcomeDizziness) {
-
+            switch (object.toLowerCase()) {
+                case "key":
+                    if (seeKey) {
+                        haveKey = true;
+                    } else {
+                        System.out.println("What key?\n");
+                    }
+                    break;
+                default:
+                    System.out.println("You can't do that.\n");
+                }
         } else {
             System.out.println("Your head spins with dizziness." +
             "You probably can't do that yet.");
@@ -55,7 +72,17 @@ public class FirstDay implements Day {
 
     public void use(String object) {
         if (overcomeDizziness) {
-
+            switch (object.toLowerCase()) {
+                case "key":
+                    if (seeKey && haveKey) {
+                        mailbox.unlockMailBox();
+                    } else {
+                        System.out.println("What key?\n");
+                    }
+                    break;
+                default:
+                    System.out.println("You can't do that.\n");
+                }
         } else {
             System.out.println("Your head spins with dizziness." +
             "You probably can't do that yet.");
@@ -64,7 +91,7 @@ public class FirstDay implements Day {
 
     public void kill(String person) {
         if (overcomeDizziness) {
-
+            System.out.println("We don't do that here.\n");
         } else {
             System.out.println("Your head spins with dizziness." +
             "You probably can't do that yet.");
@@ -73,12 +100,26 @@ public class FirstDay implements Day {
 
     public void open(String object) {
         if (overcomeDizziness) {
-
+            switch (object.toLowerCase()) {
+                case "mailbox":
+                    mailbox.openMailBox();
+                    endDay = mailbox.getState() == true ? true : false;
+                    break;
+                case "drawer":
+                    System.out.println("You opened the drawer and saw a key.\n");
+                    seeKey = true;
+                    break;
+                case "door":
+                    System.out.println("It's locked.\n");
+                    break;
+                default:
+                    System.out.println("You can't open that.\n");
+            }
         } else {
             System.out.println("Your head spins with dizziness." +
             "You probably can't do that yet.");
         }
-    }
+    } 
 
     public boolean wakeUp() {
         System.out.println("Are you sure you want to wake up?" +
