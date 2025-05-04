@@ -1,12 +1,15 @@
 package edu.grinnell.csc207.textadventure.Days;
 
 import java.util.Arrays;
+
+import edu.grinnell.csc207.textadventure.Scripts;
 import edu.grinnell.csc207.textadventure.Days.FinalDay;
 
 public class SecondDay extends TalkingDay {
     boolean found;
 
-    public SecondDay() {
+    public SecondDay(Scripts scripts) {
+        super(scripts);
         this.found = false;
         System.out.println("Welcome to second day.\n" +
         "Day 2 Goal: Talk to at least three villagers.\n" +
@@ -38,11 +41,11 @@ public class SecondDay extends TalkingDay {
         }
     }
 
-    public Day getNextDay() {
+    public Day getNextDay(Scripts scripts) {
         if (found) {
             return null;
         } 
-        return new FinalDay();  
+        return new FinalDay(scripts);  
     }
 }
 

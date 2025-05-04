@@ -2,6 +2,7 @@ package edu.grinnell.csc207.textadventure.Days;
 
 import java.util.Scanner;
 import edu.grinnell.csc207.textadventure.RoomObjects.MailBox;
+import edu.grinnell.csc207.textadventure.Scripts;
 
 public class FirstDay implements Day {
     Scanner scanner;
@@ -10,13 +11,15 @@ public class FirstDay implements Day {
     boolean seeKey;
     boolean haveKey;
     boolean endDay;
+    Scripts scripts;
 
-    public FirstDay() {
+    public FirstDay(Scripts scripts) {
         this.scanner = new Scanner(System.in);
         this.overcomeDizziness = false;
         this.mailbox = new MailBox();
         this.seeKey = false;
         this.endDay = false;
+        this.scripts = new Scripts();
     }
     
     public void playerWait() {
@@ -126,8 +129,8 @@ public class FirstDay implements Day {
         return endDay;
     }
 
-    public Day getNextDay() {
-        return new SecondDay();  
+    public Day getNextDay(Scripts scripts) {
+        return new SecondDay(scripts);  
     }
 
     public boolean wakeUp() {

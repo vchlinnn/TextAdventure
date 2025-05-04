@@ -7,10 +7,12 @@ import edu.grinnell.csc207.textadventure.Days.*;
 public class TextAdventure {
     Scanner scanner;
     Day currentDay;
+    Scripts scripts;
 
     public TextAdventure() {
+        this.scripts = new Scripts();
         this.scanner = new Scanner(System.in);
-        this.currentDay = new FirstDay();
+        this.currentDay = new FirstDay(scripts);
     }
 
     private void handleInput(String[] command) {
@@ -67,7 +69,7 @@ public class TextAdventure {
             }
 
             if (game.currentDay.isEndDay()) {
-                Day next = game.currentDay.getNextDay();
+                Day next = game.currentDay.getNextDay(game.scripts);
                 if (next != null) {
                     game.currentDay = next;
                 } else {

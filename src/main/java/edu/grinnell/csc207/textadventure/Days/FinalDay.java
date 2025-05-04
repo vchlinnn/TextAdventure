@@ -2,11 +2,14 @@ package edu.grinnell.csc207.textadventure.Days;
 
 import java.util.Arrays;
 
+import edu.grinnell.csc207.textadventure.Scripts;
+
 public class FinalDay extends TalkingDay {
 
-    public FinalDay() {
+    public FinalDay(Scripts scripts) {
+        super(scripts);
         System.out.println("Here's the final day. Time is running out.\n" +
-        "Final Day Goal: Talk to at least two villagers.\n" +
+        "Final Day Goal: Find out who the wolf is!\n" +
         "By nightfall, you'll need to guess:\n" + 
         "Who is the werewolf?\n" +
         "You step into the silent market. The village holds its breath.\n" +
@@ -18,9 +21,7 @@ public class FinalDay extends TalkingDay {
     }
 
     public void kill(String person) {
-        if (peopleTalked.size() < 2) {
-            System.out.println("You haven't talked to two people!\n");
-        } else if (person.toLowerCase().equals("goofy")) {
+        if (person.toLowerCase().equals("goofy")) {
             System.out.println("Congrats. You found the wolf\n" +
             "The village is safe... for now.\n");
         } else {
@@ -29,7 +30,7 @@ public class FinalDay extends TalkingDay {
         endDay = true;
     }
 
-    public Day getNextDay() {
+    public Day getNextDay(Scripts scripts) {
         return null;  
     }
 }

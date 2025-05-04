@@ -14,7 +14,7 @@ public abstract class TalkingDay implements Day {
     String currentPerson;
     Set<String> peopleTalked;
 
-    public TalkingDay() {
+    public TalkingDay(Scripts scripts) {
         this.scanner = new Scanner(System.in);
         this.endDay = false;
         this.scripts = new Scripts();
@@ -76,7 +76,7 @@ public abstract class TalkingDay implements Day {
         return endDay;
     }
 
-    public abstract Day getNextDay();
+    public abstract Day getNextDay(Scripts scripts);
 
     public boolean wakeUp() {
         System.out.println("Are you sure you want to wake up? " +

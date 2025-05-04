@@ -15,7 +15,7 @@ public class Scripts {
                 "\"Anyone can be the wolf. Even you.\n" +
                 "Don't expect me to trust you... or talk.\"\n" +
                 "He turns away without another word.\n",
-                "\"Funny how Goofy's still smiling. Wouldn't you be scared?\""
+                "\"Funny how Goofy's still smiling. Wouldn't you be scared?\"\n"
             ).toArray(new String[0])
         );
         scripts.put("minnie", 
@@ -23,7 +23,7 @@ public class Scripts {
                 "Minnie glances around nervously as you approach.", 
                 "\"Please... find the wolf. I'm scared.\n" +
                 "I just know I'll be the next victim!\"\n",
-                "\"I thought I heard Mickey whispering last night to someone. I ran.\""
+                "\"I thought I heard Mickey whispering last night to someone. I ran.\"\n"
             ).toArray(new String[0])
         );
         scripts.put("mickey", 
@@ -32,7 +32,7 @@ public class Scripts {
                 "\"Be careful. Not everything said is true.\n" +
                 "But if you're looking for signs...\n" +
                 "Minnie's been acting strange lately.\"\n",
-                "\"Villagers lie too. Don't forget that.\""
+                "\"Villagers lie too. Don't forget that.\"\n"
             ).toArray(new String[0])
         );
         scripts.put("goofy", 
@@ -41,7 +41,7 @@ public class Scripts {
                 "\"Psst... don't tell anyone, but I'm a seer.\n" +
                 "Saw Donald last night. He's the wolf! \"\n" +
                 "He chuckles. You're not sure if he's serious... or just being Goofy.\n",
-                "\"Dream’s almost over, friend. Hope you guess right!\""
+                "\"Dream's almost over, friend. Hope you guess right!\"\n"
             ).toArray(new String[0])
         );
     }

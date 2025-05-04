@@ -1,4 +1,5 @@
 package edu.grinnell.csc207.textadventure.Days;
+import edu.grinnell.csc207.textadventure.Scripts;
 
 public interface Day {
 
@@ -11,6 +12,6 @@ public interface Day {
     void open(String object);
     boolean isEndDay();
     boolean wakeUp();
-    Day getNextDay();    
+    Day getNextDay(Scripts scripts);    
 
 }
