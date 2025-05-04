@@ -22,8 +22,10 @@ public class FinalDay extends TalkingDay {
 
     public void kill(String person) {
         if (person.toLowerCase().equals("goofy")) {
-            System.out.println("Congrats. You found the wolf\n" +
+            System.out.println("Congrats. You found the wolf!\n" +
             "The village is safe... for now.\n");
+        } else if (!scripts.contains(person.toLowerCase())) {
+            System.out.println("Who is that person?\n");
         } else {
             System.out.println("Too bad, the wolf wins.\n");
         }

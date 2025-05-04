@@ -54,7 +54,11 @@ public class Scripts {
         }
     }
 
-    public void replaceScript(String person, String[] value) {
-        scripts.put(person, value);
+    public void replaceScript(String person, String[] newScript) {
+        scripts.put(person.toLowerCase(), newScript);
+    }
+
+    public boolean contains(String person) {
+        return scripts.containsKey(person);
     }
 }

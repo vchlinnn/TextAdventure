@@ -26,14 +26,18 @@ public class SecondDay extends TalkingDay {
     public void kill(String person) {
         if (peopleTalked.size() < 3) {
             System.out.println("You haven't talked to 3 people!\n");
+        } else if (!scripts.contains(person.toLowerCase())) {
+            System.out.println("Who is that person?\n");
         } else if (person.toLowerCase().equals("goofy")) {
-            System.out.println("Congrats. You found the wolf\n" +
+            System.out.println("Congrats. You found the wolf!\n" +
             "The village is safe... for now.\n");
             found = true;
             endDay = true;
         } else {
+            System.out.println(person + " is not a wolf - You killed an innocent villager!\n" +
+            "Better luck next time...\n");
             scripts.replaceScript(person.toLowerCase(), Arrays.asList(
-                person + " has been killed.\n", 
+                person + " has been killed.\n", "dummy",
                 "You can't talk to dead people.\n"
             ).toArray(new String[0]));
             found = false;

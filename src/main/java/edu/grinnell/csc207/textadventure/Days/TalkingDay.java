@@ -17,7 +17,7 @@ public abstract class TalkingDay implements Day {
     public TalkingDay(Scripts scripts) {
         this.scanner = new Scanner(System.in);
         this.endDay = false;
-        this.scripts = new Scripts();
+        this.scripts = scripts;
         this.currentPerson = "";
         this.peopleTalked = new HashSet<>();
     }
