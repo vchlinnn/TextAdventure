@@ -122,6 +122,14 @@ public class FirstDay implements Day {
         }
     } 
 
+    public boolean isEndDay() {
+        return endDay;
+    }
+
+    public Day getNextDay() {
+        return new SecondDay();  
+    }
+
     public boolean wakeUp() {
         System.out.println("Are you sure you want to wake up? " +
         "You haven't even discovered your role in this village...\nAnswer y/n?");

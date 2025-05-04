@@ -9,6 +9,8 @@ public interface Day {
     void use(String object);
     void kill(String person);
     void open(String object);
+    boolean isEndDay();
     boolean wakeUp();
+    Day getNextDay();    
 
 }

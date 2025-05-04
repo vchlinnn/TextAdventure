@@ -65,6 +65,16 @@ public class TextAdventure {
             } else {
                 game.handleInput(command);
             }
+
+            if (game.currentDay.isEndDay()) {
+                Day next = game.currentDay.getNextDay();
+                if (next != null) {
+                    game.currentDay = next;
+                } else {
+                    System.out.println("End game.");
+                    break;
+                }
+            }
         }
     }
 }
