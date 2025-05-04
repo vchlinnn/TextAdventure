@@ -1,11 +1,10 @@
 package edu.grinnell.csc207.textadventure.Days;
 
 import java.util.Arrays;
-import edu.grinnell.csc207.textadventure.Days.FinalDay;
 
-public class SecondDay extends TalkingDay {
+public class FinalDay extends TalkingDay {
 
-    public SecondDay() {
+    public FinalDay() {
         System.out.println("Welcome to second day.\n" +
         "Day 2 Goal: Talk to at least three villagers.\n" +
         "By nightfall, you'll need to guess:\n" + 
@@ -25,25 +24,16 @@ public class SecondDay extends TalkingDay {
     public void kill(String person) {
         if (peopleTalked.size() < 3) {
             System.out.println("You haven't talked to 3 people!\n");
-        } else if (person.toLowerCase().equals("goofy")) {
-            System.out.println("Congratulations! You found the werewolf!\n");
-            found = true;
-            endDay = true;
         } else {
-            scripts.replaceScript(person.toLowerCase(), Arrays.asList(
+            scripts.replaceScript(person, Arrays.asList(
                 person + " has been killed.\n", 
                 "You can't talk to dead people.\n"
             ).toArray(new String[0]));
-            found = false;
             endDay = true;
         }
     }
 
     public Day getNextDay() {
-        if (found) {
-            return null;
-        } 
-        return new FinalDay();  
+        return null;  
     }
 }
-
