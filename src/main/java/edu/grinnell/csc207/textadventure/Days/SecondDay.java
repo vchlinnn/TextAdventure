@@ -45,15 +45,17 @@ public class SecondDay implements Day{
                 currentPerson = "mickey";
                 break;
             case "south":
-                currentPerson = "goofey";
+                currentPerson = "goofy";
                 break;
+            default:
+                System.out.println("You will get lost if you go there.\n");
         }
         System.out.println(scripts.getScript(currentPerson, 0));
     }
 
     public void talk(String person) {
         System.out.println(scripts.getScript(currentPerson, 1));
-        peopleTalked.add(person);
+        peopleTalked.add(currentPerson);
         if (peopleTalked.size() == 3) {
             System.out.println("You now can either kill one person" +
             "who you suspect is the wolf or continue talking.\n");
