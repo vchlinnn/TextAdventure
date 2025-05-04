@@ -75,9 +75,10 @@ public class SecondDay implements Day{
             System.out.println("You haven't talked to 3 people!\n");
         } else {
             scripts.replaceScript(person, Arrays.asList(
-                person + " has been killed\n", 
-                "You can't talk to dead people\n"
+                person + " has been killed.\n", 
+                "You can't talk to dead people.\n"
             ).toArray(new String[0]));
+            endDay = true;
         }
     }
 
@@ -90,7 +91,7 @@ public class SecondDay implements Day{
     }
 
     public Day getNextDay() {
-        return new SecondDay();  
+        return new ThirdDay();  
     }
 
     public boolean wakeUp() {
