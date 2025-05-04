@@ -29,7 +29,7 @@ public class FirstDay implements Day {
         "Or the wolf will have taken them all.\n" +
         "But first, you must uncover one thing: Which side are you on?\n" +
         "Goal Day 1: Find out your role.\n" +
-        "You scan the room. There's a mailbox, a drawer, a rug, and a door." +
+        "You scan the room. There's a mailbox, a drawer, a rug, and a door. " +
         "What will you do?");
     }
 
@@ -37,7 +37,7 @@ public class FirstDay implements Day {
         if (overcomeDizziness) {
             System.out.println("The room is too small - you don't need to move\n");
         } else {
-            System.out.println("Your head spins with dizziness." +
+            System.out.println("Your head spins with dizziness. " +
             "You probably can't do that yet.");
         }
     }
@@ -46,7 +46,7 @@ public class FirstDay implements Day {
         if (overcomeDizziness) {
             System.out.println("...No response\n");
         } else {
-            System.out.println("Your head spins with dizziness." +
+            System.out.println("Your head spins with dizziness. " +
             "You probably can't do that yet.");
         }
     }
@@ -57,6 +57,7 @@ public class FirstDay implements Day {
                 case "key":
                     if (seeKey) {
                         haveKey = true;
+                        System.out.println("You now have a key. What should you open?\n");
                     } else {
                         System.out.println("What key?\n");
                     }
@@ -65,7 +66,7 @@ public class FirstDay implements Day {
                     System.out.println("You can't do that.\n");
                 }
         } else {
-            System.out.println("Your head spins with dizziness." +
+            System.out.println("Your head spins with dizziness. " +
             "You probably can't do that yet.");
         }
     }
@@ -84,7 +85,7 @@ public class FirstDay implements Day {
                     System.out.println("You can't do that.\n");
                 }
         } else {
-            System.out.println("Your head spins with dizziness." +
+            System.out.println("Your head spins with dizziness. " +
             "You probably can't do that yet.");
         }
     }
@@ -93,7 +94,7 @@ public class FirstDay implements Day {
         if (overcomeDizziness) {
             System.out.println("We don't do that here.\n");
         } else {
-            System.out.println("Your head spins with dizziness." +
+            System.out.println("Your head spins with dizziness. " +
             "You probably can't do that yet.");
         }
     }
@@ -116,21 +117,21 @@ public class FirstDay implements Day {
                     System.out.println("You can't open that.\n");
             }
         } else {
-            System.out.println("Your head spins with dizziness." +
+            System.out.println("Your head spins with dizziness. " +
             "You probably can't do that yet.");
         }
     } 
 
     public boolean wakeUp() {
-        System.out.println("Are you sure you want to wake up?" +
-        "You haven't even discovered your role in this village...\n y/n?");
+        System.out.println("Are you sure you want to wake up? " +
+        "You haven't even discovered your role in this village...\nAnswer y/n?");
         while (true) {
-            if (scanner.nextLine().toLowerCase().equals("y")) {
+            String answer = scanner.nextLine().toLowerCase();
+            if (answer.equals("y")) {
                 scanner.close();
-                System.out.println("Bye!\n");
+                System.out.println("Till next time!\n");
                 return false;
-            } else if (scanner.nextLine().toLowerCase().equals("n")) {
-                scanner.close();
+            } else if (answer.equals("n")) {
                 System.out.println("Yay let's continue!\n");
                 return true;
             } else {

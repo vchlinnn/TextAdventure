@@ -15,7 +15,7 @@ public class TextAdventure {
 
     private void handleInput(String[] command) {
         String verb = command[0];
-        String noun = command.length > 1 ? command[-1] : "";
+        String noun = command.length > 1 ? command[command.length - 1] : "";
         switch (verb) {
             case "wait":
                 currentDay.playerWait();
@@ -60,12 +60,11 @@ public class TextAdventure {
         );
         while (playing) {
             String[] command = game.scanner.nextLine().toLowerCase().split(" ");
-            if (command[0] == "pinch") {
+            if (command[0].equals("pinch")) {
                 playing = game.currentDay.wakeUp();
             } else {
                 game.handleInput(command);
             }
         }
-        System.out.println("Till next time!\n");
     }
 }
