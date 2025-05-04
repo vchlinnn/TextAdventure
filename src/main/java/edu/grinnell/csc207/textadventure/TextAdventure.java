@@ -1,12 +1,16 @@
 package edu.grinnell.csc207.textadventure;
 
 import java.util.Scanner;
+import edu.grinnell.csc207.textadventure.Day;
+import edu.grinnell.csc207.textadventure.FirstDay;
 
 public class TextAdventure {
     Scanner scanner;
+    Day currentDay;
 
     public TextAdventure() {
         this.scanner = new Scanner(System.in);
+        this.currentDay = new FirstDay();
     }
 
     private void handleInput(String[] command) {
@@ -14,25 +18,25 @@ public class TextAdventure {
         String noun = command.length > 1 ? command[-1] : "";
         switch (verb) {
             case "wait":
-                // movePlayer(noun);
+                currentDay.playerWait();
                 break;
             case "go":
-                // pickUpItem(noun);
+                currentDay.go();
                 break;
             case "talk":
-                // openObject(noun);
+                currentDay.talk(noun);
                 break;
             case "pick":
-                // openObject(noun);
+                currentDay.pick(noun);
                 break;
             case "use":
-                // openObject(noun);
+                currentDay.use(noun);
                 break;
             case "kill":
-                // openObject(noun);
+                currentDay.kill(noun);
                 break;
             case "pinch":
-                // openObject(noun);
+                currentDay.wakeUp();;
                 break;
             default:
                 System.out.println("You are speaking an unfathomable language");
@@ -56,7 +60,7 @@ public class TextAdventure {
                 "Not yet.\n" 
             );
             String[] command = game.scanner.nextLine().toLowerCase().split(" ");
-
+            game.handleInput(command);
         }
         
     }

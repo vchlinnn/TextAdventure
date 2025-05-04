@@ -4,10 +4,10 @@ public interface Day {
 
     void playerWait();
     void go();
-    void talk();
-    void pick();
-    void use();
-    void kill();
+    void talk(String person);
+    void pick(String object);
+    void use(String object);
+    void kill(String person);
     void wakeUp();
 
 }
