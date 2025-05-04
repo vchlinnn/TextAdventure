@@ -35,8 +35,8 @@ public class TextAdventure {
             case "kill":
                 currentDay.kill(noun);
                 break;
-            case "pinch":
-                currentDay.wakeUp();;
+            case "open":
+                currentDay.open(noun);
                 break;
             default:
                 System.out.println("You are speaking an unfathomable language");
@@ -60,8 +60,11 @@ public class TextAdventure {
                 "Not yet.\n" 
             );
             String[] command = game.scanner.nextLine().toLowerCase().split(" ");
-            game.handleInput(command);
+            if (command[0] == "pinch") {
+                playing = game.currentDay.wakeUp();
+            } else {
+                game.handleInput(command);
+            }
         }
-        
     }
 }

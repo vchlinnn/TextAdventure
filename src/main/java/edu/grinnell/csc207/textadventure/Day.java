@@ -8,6 +8,7 @@ public interface Day {
     void pick(String object);
     void use(String object);
     void kill(String person);
-    void wakeUp();
+    void open(String object);
+    boolean wakeUp();
 
 }
