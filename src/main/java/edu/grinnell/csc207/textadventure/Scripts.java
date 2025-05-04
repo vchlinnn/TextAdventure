@@ -9,7 +9,7 @@ public class Scripts {
     
     public Scripts() {
         this.scripts = new HashMap<String,String[]>();
-        scripts.put("Donald", 
+        scripts.put("donald", 
             Arrays.asList(
                 "You approach Donald. He eyes you coldly.", 
                 "\"Anyone can be the wolf. Even you.\n" +
@@ -17,14 +17,14 @@ public class Scripts {
                 "He turns away without another word.\n"
             ).toArray(new String[0])
         );
-        scripts.put("Minnie", 
+        scripts.put("minnie", 
             Arrays.asList(
                 "Minnie glances around nervously as you approach.", 
                 "\"Please… find the wolf. I'm scared.\n" +
                 "I just know I'll be the next victim…\"\n"
             ).toArray(new String[0])
         );
-        scripts.put("Mickey", 
+        scripts.put("mickey", 
             Arrays.asList(
                 "Mickey meets your gaze with a calm nod.", 
                 "\"Be careful. Not everything said is true.\n" +
@@ -32,7 +32,7 @@ public class Scripts {
                 "Minnie's been acting strange lately.\"\n"
             ).toArray(new String[0])
         );
-        scripts.put("Goofy", 
+        scripts.put("goofy", 
             Arrays.asList(
                 "Goofy waves with a crooked grin.", 
                 "\"Psst… don't tell anyone, but I'm a seer.\n" +
@@ -44,5 +44,9 @@ public class Scripts {
 
     public String getScript(String person, int index) {
         return scripts.get(person)[index];
+    }
+
+    public void replaceScript(String person, String[] value) {
+        scripts.put(person, value);
     }
 }

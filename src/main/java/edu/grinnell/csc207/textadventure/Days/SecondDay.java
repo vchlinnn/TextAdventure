@@ -1,17 +1,25 @@
 package edu.grinnell.csc207.textadventure.Days;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
+
 import edu.grinnell.csc207.textadventure.Scripts;
 
 public class SecondDay implements Day{
     Scanner scanner;
     boolean endDay;
     Scripts scripts;
+    String currentPerson;
+    Set<String> peopleTalked;
 
     public SecondDay() {
         this.scanner = new Scanner(System.in);
         this.endDay = false;
         this.scripts = new Scripts();
+        this.currentPerson = "";
+        this.peopleTalked = new HashSet<>();
         System.out.println("Welcome to second day.\n" +
         "Day 2 Goal: Talk to at least three villagers.\n" +
         "By nightfall, you'll need to guess:\n" + 
@@ -28,34 +36,51 @@ public class SecondDay implements Day{
     public void go(String direction) {
         switch (direction.toLowerCase()) {
             case "north":
-                // meet mickey
+                currentPerson = "donald";
+                break;
             case "east":
-                // meet minnie
+                currentPerson = "minnie";
+                break;
             case "west":
-                // meet donald
+                currentPerson = "mickey";
+                break;
             case "south":
-                // meet goofey
+                currentPerson = "goofey";
+                break;
         }
+        System.out.println(scripts.getScript(currentPerson, 0));
     }
 
     public void talk(String person) {
-        
+        System.out.println(scripts.getScript(currentPerson, 1));
+        peopleTalked.add(person);
+        if (peopleTalked.size() == 3) {
+            System.out.println("You now can either kill one person" +
+            "who you suspect is the wolf or continue talking.\n");
+        }
     }
 
     public void pick(String object) {
-        
+        System.out.println("There's no such thing here.\n");
     }
 
     public void use(String object) {
-        
+        System.out.println("There's no such thing here.\n");
     }
 
     public void kill(String person) {
-        
+        if (peopleTalked.size() < 3) {
+            System.out.println("You haven't talked to 3 people!\n");
+        } else {
+            scripts.replaceScript(person, Arrays.asList(
+                person + " has been killed\n", 
+                "You can't talk to dead people\n"
+            ).toArray(new String[0]));
+        }
     }
 
     public void open(String object) {
-        
+        System.out.println("There's no such thing here.\n");
     } 
 
     public boolean isEndDay() {
