@@ -1,14 +1,17 @@
 package edu.grinnell.csc207.textadventure.Days;
 
 import java.util.Scanner;
+import edu.grinnell.csc207.textadventure.Scripts;
 
 public class SecondDay implements Day{
     Scanner scanner;
     boolean endDay;
+    Scripts scripts;
 
     public SecondDay() {
         this.scanner = new Scanner(System.in);
         this.endDay = false;
+        this.scripts = new Scripts();
         System.out.println("Welcome to second day.\n" +
         "Day 2 Goal: Talk to at least three villagers.\n" +
         "By nightfall, you'll need to guess:\n" + 
