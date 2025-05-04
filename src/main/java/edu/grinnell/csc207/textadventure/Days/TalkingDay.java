@@ -13,7 +13,6 @@ public abstract class TalkingDay implements Day {
     Scripts scripts;
     String currentPerson;
     Set<String> peopleTalked;
-    boolean found;
 
     public TalkingDay() {
         this.scanner = new Scanner(System.in);
@@ -21,7 +20,6 @@ public abstract class TalkingDay implements Day {
         this.scripts = new Scripts();
         this.currentPerson = "";
         this.peopleTalked = new HashSet<>();
-        this.found = false;
     }
     
     public void playerWait() {
@@ -46,10 +44,8 @@ public abstract class TalkingDay implements Day {
             default:
                 System.out.println("You will get lost if you go there.\n");
         }
-        goHelper(currentPerson);
+        System.out.println(scripts.getScript(currentPerson, 0));
     }
-
-    public abstract void goHelper(String currentPerson);
 
     public void talk(String person) {
         talkHelper(currentPerson);
@@ -70,17 +66,7 @@ public abstract class TalkingDay implements Day {
         System.out.println("There's no such thing here.\n");
     }
 
-    public void kill(String person) {
-        if (peopleTalked.size() < 3) {
-            System.out.println("You haven't talked to 3 people!\n");
-        } else {
-            scripts.replaceScript(person, Arrays.asList(
-                person + " has been killed.\n", 
-                "You can't talk to dead people.\n"
-            ).toArray(new String[0]));
-            endDay = true;
-        }
-    }
+    public abstract void kill(String person);
 
     public void open(String object) {
         System.out.println("There's no such thing here.\n");
@@ -99,7 +85,7 @@ public abstract class TalkingDay implements Day {
             String answer = scanner.nextLine().toLowerCase();
             if (answer.equals("y")) {
                 scanner.close();
-                System.out.println("Till next time!\n");
+                System.out.println("Till next time.\n");
                 return false;
             } else if (answer.equals("n")) {
                 System.out.println("Yay let's continue!\n");

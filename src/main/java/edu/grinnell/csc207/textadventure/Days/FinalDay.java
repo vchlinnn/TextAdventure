@@ -5,32 +5,28 @@ import java.util.Arrays;
 public class FinalDay extends TalkingDay {
 
     public FinalDay() {
-        System.out.println("Welcome to second day.\n" +
-        "Day 2 Goal: Talk to at least three villagers.\n" +
+        System.out.println("Here's the final day. Time is running out.\n" +
+        "Final Day Goal: Talk to at least two villagers.\n" +
         "By nightfall, you'll need to guess:\n" + 
         "Who is the werewolf?\n" +
-        "Stepping outside, you are now in the middle of a quiet village market.\n" +
-        "There's north, east, south, and west - where do you want to go?\n");
-    }
-
-    public void goHelper(String currentPerson) {
-        System.out.println(scripts.getScript(currentPerson, 0));
+        "You step into the silent market. The village holds its breath.\n" +
+        "There's north, east, south, and west - choose quick before it's too late\n");
     }
 
     public void talkHelper(String currentPerson) {
-        System.out.println(scripts.getScript(currentPerson, 1));
+        System.out.println(scripts.getScript(currentPerson, 2));
     }
 
     public void kill(String person) {
-        if (peopleTalked.size() < 3) {
-            System.out.println("You haven't talked to 3 people!\n");
+        if (peopleTalked.size() < 2) {
+            System.out.println("You haven't talked to two people!\n");
+        } else if (person.toLowerCase().equals("goofy")) {
+            System.out.println("Congrats. You found the wolf\n" +
+            "The village is safe... for now.\n");
         } else {
-            scripts.replaceScript(person, Arrays.asList(
-                person + " has been killed.\n", 
-                "You can't talk to dead people.\n"
-            ).toArray(new String[0]));
-            endDay = true;
+            System.out.println("Too bad, the wolf wins.\n");
         }
+        endDay = true;
     }
 
     public Day getNextDay() {
