@@ -62,7 +62,7 @@ public abstract class TalkingDay implements Day {
         System.out.println("There's no such thing here.\n");
     }
 
-    public void use(String object) {
+    public void read(String object) {
         System.out.println("There's no such thing here.\n");
     }
 

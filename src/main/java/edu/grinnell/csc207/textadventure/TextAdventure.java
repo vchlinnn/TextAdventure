@@ -31,8 +31,8 @@ public class TextAdventure {
             case "pick":
                 currentDay.pick(noun);
                 break;
-            case "use":
-                currentDay.use(noun);
+            case "read":
+                currentDay.read(noun);
                 break;
             case "kill":
                 currentDay.kill(noun);

@@ -9,7 +9,6 @@ public class FirstDay implements Day {
     boolean overcomeDizziness;
     MailBox mailbox;
     boolean seeKey;
-    boolean haveKey;
     boolean endDay;
     Scripts scripts;
 
@@ -59,7 +58,7 @@ public class FirstDay implements Day {
             switch (object.toLowerCase()) {
                 case "key":
                     if (seeKey) {
-                        haveKey = true;
+                        mailbox.unlockMailBox();
                         System.out.println("You now have a key. What should you open?\n");
                     } else {
                         System.out.println("What key?\n");
@@ -74,18 +73,21 @@ public class FirstDay implements Day {
         }
     }
 
-    public void use(String object) {
+    public void read(String object) {
         if (overcomeDizziness) {
             switch (object.toLowerCase()) {
-                case "key":
-                    if (seeKey && haveKey) {
-                        mailbox.unlockMailBox();
+                case "letter":
+                    if (mailbox.getState()) {
+                        System.out.println("\"You are... a powerless villager. No powers.\"" +
+                        " Just your instinct.\n" +
+            "As your role has been revealed, door is self unlocked. Day 2 will now begin.\n");
+                        endDay = true;
                     } else {
-                        System.out.println("What key?\n");
+                        System.out.println("What letter?\n");
                     }
                     break;
                 default:
-                    System.out.println("You can't do that.\n");
+                    System.out.println("You can't read that.\n");
                 }
         } else {
             System.out.println("Your head spins with dizziness. " +
@@ -107,14 +109,13 @@ public class FirstDay implements Day {
             switch (object.toLowerCase()) {
                 case "mailbox":
                     mailbox.openMailBox();
-                    endDay = mailbox.getState() == true ? true : false;
                     break;
                 case "drawer":
                     System.out.println("You opened the drawer and saw a key.\n");
                     seeKey = true;
                     break;
                 case "door":
-                    System.out.println("It's locked.\n");
+                    System.out.println("You can't open it. You're locked\n");
                     break;
                 default:
                     System.out.println("You can't open that.\n");

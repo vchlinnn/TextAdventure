@@ -7,7 +7,7 @@ public interface Day {
     void go(String direction);
     void talk(String person);
     void pick(String object);
-    void use(String object);
+    void read(String object);
     void kill(String person);
     void open(String object);
     boolean isEndDay();
