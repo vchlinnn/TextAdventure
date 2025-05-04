@@ -33,7 +33,7 @@ public class FirstDay implements Day {
         "What will you do?");
     }
 
-    public void go() {
+    public void go(String direction) {
         if (overcomeDizziness) {
             System.out.println("The room is too small - you don't need to move\n");
         } else {

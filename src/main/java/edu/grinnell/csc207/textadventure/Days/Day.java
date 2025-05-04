@@ -3,7 +3,7 @@ package edu.grinnell.csc207.textadventure.Days;
 public interface Day {
 
     void playerWait();
-    void go();
+    void go(String direction);
     void talk(String person);
     void pick(String object);
     void use(String object);

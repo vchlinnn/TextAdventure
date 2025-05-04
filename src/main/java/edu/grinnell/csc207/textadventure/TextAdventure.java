@@ -2,8 +2,7 @@ package edu.grinnell.csc207.textadventure;
 
 import java.util.Scanner;
 
-import edu.grinnell.csc207.textadventure.Days.Day;
-import edu.grinnell.csc207.textadventure.Days.FirstDay;
+import edu.grinnell.csc207.textadventure.Days.*;
 
 public class TextAdventure {
     Scanner scanner;
@@ -22,7 +21,7 @@ public class TextAdventure {
                 currentDay.playerWait();
                 break;
             case "go":
-                currentDay.go();
+                currentDay.go(noun);
                 break;
             case "talk":
                 currentDay.talk(noun);
