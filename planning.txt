@@ -1,1 +1,21 @@
-Some game planning
+Some game planning:
+
+Greet the user of the program
+Set up the initial state of the game, in particular, put the player in the initial room.
+Print the entry text for that initial room.
+While the game has not yet ended:
+Get a command from the user.
+Process that command along with the current room and player state and print out the results of that command.
+
+Program Design:
+
+Room abstract class 
+
+Initial state: wake up in a dream. Lying on a bed in an old fashioned room. Can "wake up" anytime 
+to stop. 
+
+Goal day 1: Know who you are and what this game is about. 
+Answer: you are a villager. Find the wolf. 
+
+Goal day 2: Talk to at least 3 people.
+
