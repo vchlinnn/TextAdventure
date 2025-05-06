@@ -24,12 +24,13 @@ public class FinalDay extends TalkingDay {
         if (person.toLowerCase().equals("goofy")) {
             System.out.println("Congrats. You found the wolf!\n" +
             "The village is safe... for now.\n");
+            endDay = true;
         } else if (!scripts.contains(person.toLowerCase())) {
             System.out.println("Who is that person?\n");
         } else {
             System.out.println("Too bad, the wolf wins.\n");
+            endDay = true;
         }
-        endDay = true;
     }
 
     public Day getNextDay(Scripts scripts) {

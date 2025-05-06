@@ -32,7 +32,7 @@ public class FirstDay implements Day {
         "But first, you must uncover one thing: Which side are you on?\n" +
         "Goal Day 1: Find out your role.\n" +
         "You scan the room. There's a mailbox, a drawer, a rug, and a door. " +
-        "What will you do?");
+        "What will you do?\n");
     }
 
     public void go(String direction) {

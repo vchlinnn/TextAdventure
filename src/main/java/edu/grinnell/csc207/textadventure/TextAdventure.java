@@ -41,7 +41,10 @@ public class TextAdventure {
                 currentDay.open(noun);
                 break;
             default:
-                System.out.println("You are speaking an unfathomable language");
+                System.out.println("You are speaking an unfathomable language.\n " +
+                    "You should try to use the following verbs: \n" +
+                    "wait, go, talk, pick, read, kill, open.\n" +
+                    "Or you can just pinch yourself to wake up.\n");
         }
     }
     public static void main(String[] args) {
@@ -55,8 +58,8 @@ public class TextAdventure {
             "The air smells like dust and wood. " + 
             "It feels like a house in a quiet village.\n" +
             "You don't remember how you got here.\n" +
-            "But somehow… you know this is a dream. \n" + 
-            "You can wake up anytime — just pinch yourself. \n" + 
+            "But somehow... you know this is a dream. \n" + 
+            "You can wake up anytime - just pinch yourself. \n" + 
             "Still, something tells you to wait. \n" + 
             "Not yet.\n" 
         );
