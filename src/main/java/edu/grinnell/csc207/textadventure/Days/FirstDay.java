@@ -192,7 +192,7 @@ public class FirstDay implements Day {
     /**
      * Checks if the player has woken up from the game
      * 
-     * @return true if the player woke up, false otherwise
+     * @return true if the player woke up
      */
     public boolean wakeUp() {
         System.out.println("Are you sure you want to wake up? "
