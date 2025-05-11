@@ -16,6 +16,8 @@ _Do not read this if you haven't tried out the game yourself!_
 
 > (Only first word and last word matter)
 
+To stop anytime: pinch
+
 - Day 1:
   - wait
   - open drawer
@@ -23,6 +25,7 @@ _Do not read this if you haven't tried out the game yourself!_
   - open mailbox
   - read letter
 - Day 2:
+
   - go + `direction`
   - talk
   - do the above three times
