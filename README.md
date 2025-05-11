@@ -1,7 +1,9 @@
 # Text Adventure Game
 
 **Author**: Linh Vu
+
 **Description**: Text Adventure Game which simulates basic werewolf roleplay game
+
 **Resources**:
 
 - IDE: VSCode
@@ -25,6 +27,7 @@ _Do not read this if you haven't tried out the game yourself!_
   - talk
   - do the above three times
   - kill goofy => win game
+
     Or you can kill someone else and proceed to Day 3 (last day) for fun.
 
 Have fun!
