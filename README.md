@@ -21,7 +21,7 @@ _Do not read this if you haven't tried out the game yourself!_
   - open mailbox
   - read letter
 - Day 2:
-  - go + <direction>
+  - go + `direction`
   - talk
   - do the above three times
   - kill goofy => win game
